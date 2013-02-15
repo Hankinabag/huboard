@@ -70,7 +70,8 @@ module Huboard
     end
 
     post '/:user/:repo/board/create/?' do
-      pebble.create_board(params[:user],params[:repo],"#{socket_backend}/issues/webhook?token=#{encrypted_token}") unless socket_backend.nil?
+      pebble.create_board(params[:user],params[:repo])
+      pebble.create_hook(params[:user], params[:repo],"#{socket_backend}/issues/webhook?token=#{encrypted_token}") unless socket_backend.nil?
       redirect "/#{params[:user]}/#{params[:repo]}/board"
     end
 

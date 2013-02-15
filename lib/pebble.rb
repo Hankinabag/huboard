@@ -158,12 +158,11 @@ module Stint
       labels.sort_by { |l| l[:index].to_i }
     end
 
-    def create_board(user_name, repo, hook)
+    def create_board(user_name, repo)
       github.create_label user_name, repo, :name => "0 - Backlog", :color => "CCCCCC"
       github.create_label user_name, repo, :name => "1 - Ready", :color => "CCCCCC"
       github.create_label user_name, repo, :name => "2 - Working", :color => "CCCCCC"
       github.create_label user_name, repo, :name => "3 - Done", :color => "CCCCCC"
-      create_hook user_name, repo, hook
     end
 
 

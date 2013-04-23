@@ -160,9 +160,20 @@ module Stint
 
     def create_board(user_name, repo)
       github.create_label user_name, repo, :name => "0 - Backlog", :color => "CCCCCC"
-      github.create_label user_name, repo, :name => "1 - Ready", :color => "CCCCCC"
-      github.create_label user_name, repo, :name => "2 - Working", :color => "CCCCCC"
-      github.create_label user_name, repo, :name => "3 - Done", :color => "CCCCCC"
+      github.create_label user_name, repo, :name => "1 - Bugs", :color => "CCCCCC"
+      github.create_label user_name, repo, :name => "2 - In Development", :color => "CCCCCC"
+      github.create_label user_name, repo, :name => "3 - Test Ready", :color => "CCCCCC"
+      github.create_label user_name, repo, :name => "4 - In Test", :color => "CCCCCC"
+      github.create_label user_name, repo, :name => "Automation", :color => "444444"
+      github.create_label user_name, repo, :name => "Enhancement", :color => "84B6EB"
+      github.create_label user_name, repo, :name => "Job", :color => "444444"
+      github.create_label user_name, repo, :name => "Pending Migration", :color => "8E8E38"
+      github.create_label user_name, repo, :name => "Scenario", :color => "0000FF"
+      github.create_label user_name, repo, :name => "Severity - Critical", :color => "FF0000"
+      github.create_label user_name, repo, :name => "Severity - Low", :color => "FFFF00"
+      github.create_label user_name, repo, :name => "Severity - Medium", :color => "FF8000"
+      github.create_label user_name, repo, :name => "Story", :color => "02D7E1"
+      github.create_label user_name, repo, :name => "Can't Reproduce", :color => "6495ED"
     end
 
 

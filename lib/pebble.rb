@@ -106,6 +106,7 @@ module Stint
       issues = github.get_issues user_name, repo
       issues.each do |issue|
         issue["current_state"] = current_state(issue)
+        issue["pull_request"] = if issue.pull_request.nil? then {} else issue.pull_request end
         issue["_data"] = embedded_data issue["body"]
         issue["repo"] = {owner: {login:user_name},name: repo}
         issue["other_labels"] = issue["labels"].reject {|l| @huboard_patterns.any? {|p| p.match(l["name"])}}
